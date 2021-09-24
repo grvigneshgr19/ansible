@@ -15,4 +15,4 @@
       copy:
         src:  index.html
         dest: /var/wwww/html/index.html
-        mode: '0777'
+      
