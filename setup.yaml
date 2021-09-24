@@ -10,8 +10,9 @@
       service:
         name: httpd
         state: started
+        enabled: True
     - name: Copy file with owner and permissions
       copy:
-        src: ./index.html
+        src:  index.html
         dest: /var/wwww/html/index.html
         mode: '0777'
