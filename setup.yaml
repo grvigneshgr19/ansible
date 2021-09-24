@@ -1,0 +1,17 @@
+- hosts: greens
+  remote_user: ec2-user
+  became: yes
+  tasks:
+    - name: install the latest version of Apache
+      yum:
+        name: httpd
+        state: latest
+    - name: start the service
+      service:
+        name: httpd
+        state: started
+    - name: Copy file with owner and permissions
+      copy:
+        src: ./index.html
+        dest: /var/wwww/html/index.html
+        mode: '0777'
